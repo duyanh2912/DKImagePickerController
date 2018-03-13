@@ -43,7 +43,7 @@ internal protocol DKImagePickerControllerObserver {
 
 ////////////////////////////////////////////////////////////////////////
 
-@objc
+@objcMembers
 open class DKImagePickerController: UINavigationController, DKImageBaseManagerObserver {
     
     /// Use UIDelegate to Customize the picker UI.
@@ -154,7 +154,7 @@ open class DKImagePickerController: UINavigationController, DKImageBaseManagerOb
         self.groupDataManager = groupDataManager
     }
     
-    private override init(rootViewController: UIViewController) {
+    public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         
         self.preferredContentSize = CGSize(width: 680, height: 600)
@@ -162,7 +162,7 @@ open class DKImagePickerController: UINavigationController, DKImageBaseManagerOb
         rootViewController.navigationItem.hidesBackButton = true
     }
     
-    private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
